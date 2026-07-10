@@ -87,7 +87,24 @@ h1 em{font-style:normal;color:#2f85ff}
 .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:center}
 .section-kicker{color:#0b63ff;font-size:.76rem;font-weight:900;letter-spacing:.08em;margin-bottom:10px}
 .about-copy h2,.section-heading h2,.contact-section h2{font-family:Manrope,sans-serif;font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;letter-spacing:-.04em}
-.about-copy p{color:var(--muted)}.signature{font-family:cursive;color:#0b63ff;font-size:1.8rem;margin-top:12px}
+.about-copy p{color:var(--muted)}.signature{
+  margin-top:32px;
+  display:inline-block;
+  font-family:"Segoe Script","Lucida Handwriting","Brush Script MT",cursive;
+  font-size:3.1rem;
+  font-weight:400;
+  line-height:1;
+  letter-spacing:-1px;
+  color:#1f6fff;
+  transform:rotate(-2deg);
+  text-shadow:0 0 12px rgba(31,111,255,.16);
+  user-select:none;
+  transition:transform .25s ease,color .25s ease;
+}
+.signature:hover{
+  color:#4b8cff;
+  transform:rotate(-2deg) scale(1.025);
+}
 .competencies{padding:30px;background:linear-gradient(135deg,#081d3d,#061529);border-radius:18px;color:white;box-shadow:var(--shadow)}
 .competency-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .competency-grid>div{display:flex;gap:12px;align-items:flex-start}.competency-grid>div>span{width:42px;height:42px;border-radius:10px;background:#0b63ff25;display:grid;place-items:center}
@@ -118,8 +135,140 @@ footer{background:#040e1d;color:#cbd6e7;padding:24px 0}.footer{display:flex;just
 .modal{position:fixed;inset:0;background:#020711cc;display:none;place-items:center;padding:20px;z-index:100}.modal.open{display:grid}
 .modal-content{position:relative;max-width:650px;width:100%;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:0 30px 90px #0008}
 .modal-close{position:absolute;right:18px;top:12px;border:none;background:none;color:var(--text);font-size:2rem;cursor:pointer}.modal-content h2{margin:16px 0}.modal-content h4{margin-bottom:4px}.modal-content p{color:var(--muted)}
-@media(max-width:980px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.metrics article{border-right:none;border-bottom:1px solid var(--line);padding:16px}.project-grid,.skills-grid{grid-template-columns:1fr 1fr}.nav-links{display:none;position:absolute;top:70px;left:4%;right:4%;background:#071426;padding:18px;border-radius:14px;flex-direction:column}.nav-links.open{display:flex}.nav-links a{padding:8px}.menu-button{display:block}}
-@media(max-width:640px){h1{font-size:3rem}.metrics,.project-grid,.skills-grid,.competency-grid{grid-template-columns:1fr}.metrics article{border-bottom:1px solid var(--line)}.timeline:before{left:8px}.timeline-row{grid-template-columns:1fr;padding-left:30px;position:relative}.timeline-year{text-align:left;padding:0}.timeline-dot{position:absolute;left:0;top:0;margin:0}.contact-strip>span{display:none}.hero{padding-top:60px}}
+
+.certifications-section{
+  background:var(--soft);
+  border-block:1px solid var(--line);
+}
+.certification-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.certificate-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:26px;
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.certificate-card:before{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:0;
+  height:4px;
+  background:linear-gradient(90deg,#0b63ff,#45d7ff);
+}
+.certificate-badge{
+  width:52px;height:52px;border-radius:15px;
+  display:grid;place-items:center;
+  color:white;font-size:1.35rem;font-weight:900;
+  margin-bottom:18px;
+}
+.certificate-blue{background:linear-gradient(135deg,#0b63ff,#3b82f6)}
+.certificate-purple{background:linear-gradient(135deg,#6d28d9,#a855f7)}
+.certificate-green{background:linear-gradient(135deg,#059669,#22c55e)}
+
+.certificate-orange{background:linear-gradient(135deg,#ea580c,#f59e0b)}
+.certificate-red{background:linear-gradient(135deg,#b91c1c,#ef4444)}
+.certificate-status.verified{
+  background:#10b98118;
+  color:#10b981;
+}
+
+.certificate-status{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#0b63ff15;
+  color:#0b63ff;
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.certificate-card h3{margin:15px 0 18px;font-size:1.25rem}
+.certificate-card dl{margin:0}
+.certificate-card dl div{
+  display:grid;
+  grid-template-columns:95px 1fr;
+  gap:12px;
+  padding:10px 0;
+  border-top:1px solid var(--line);
+}
+.certificate-card dt{
+  color:var(--muted);
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+.certificate-card dd{margin:0;font-weight:700;font-size:.9rem}
+.credential-button{
+  width:100%;
+  margin-top:18px;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:var(--soft);
+  color:var(--muted);
+  font-weight:850;
+}
+.development-panel{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:28px;
+  align-items:center;
+  padding:28px;
+  background:linear-gradient(135deg,#071a36,#0b2f61);
+  color:white;
+  border-radius:17px;
+  box-shadow:var(--shadow);
+}
+.development-panel h3{font-size:1.55rem;margin:0}
+.development-chips{display:flex;flex-wrap:wrap;gap:9px}
+.development-chips span{
+  padding:9px 12px;
+  border-radius:999px;
+  background:#ffffff12;
+  border:1px solid #ffffff26;
+  font-size:.82rem;
+}
+.learning-timeline{
+  margin-top:24px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+.learning-row{
+  display:grid;
+  grid-template-columns:75px 22px 1fr;
+  align-items:center;
+  gap:14px;
+  padding:13px 0;
+}
+.learning-row strong{color:#0b63ff}
+.learning-row span{
+  width:13px;height:13px;border-radius:50%;
+  background:#0b63ff;
+  box-shadow:0 0 0 6px #0b63ff18;
+  position:relative;
+}
+.learning-row span:after{
+  content:"";
+  position:absolute;
+  width:2px;height:45px;
+  background:var(--line);
+  top:13px;left:5px;
+}
+.learning-row:last-child span:after{display:none}
+.learning-row p{margin:0;color:var(--muted)}
+
+@media(max-width:980px){.hero-grid,.about-grid,.contact-grid,.development-panel{grid-template-columns:1fr}.certification-grid{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:repeat(2,1fr)}.metrics article{border-right:none;border-bottom:1px solid var(--line);padding:16px}.project-grid,.skills-grid{grid-template-columns:1fr 1fr}.nav-links{display:none;position:absolute;top:70px;left:4%;right:4%;background:#071426;padding:18px;border-radius:14px;flex-direction:column}.nav-links.open{display:flex}.nav-links a{padding:8px}.menu-button{display:block}}
+@media(max-width:640px){h1{font-size:3rem}.signature{font-size:2.35rem}.metrics,.project-grid,.skills-grid,.competency-grid,.certification-grid{grid-template-columns:1fr}.metrics article{border-bottom:1px solid var(--line)}.timeline:before{left:8px}.timeline-row{grid-template-columns:1fr;padding-left:30px;position:relative}.timeline-year{text-align:left;padding:0}.timeline-dot{position:absolute;left:0;top:0;margin:0}.contact-strip>span{display:none}.hero{padding-top:60px}}
 
 </style>
 </head>
@@ -144,6 +293,7 @@ footer{background:#040e1d;color:#cbd6e7;padding:24px 0}.footer{display:flex;just
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -340,6 +490,97 @@ footer{background:#040e1d;color:#cbd6e7;padding:24px 0}.footer{display:flex;just
           </article>
         </div>
       </div>
+    </section>
+
+
+    <section class="section certifications-section" id="certifications">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="section-kicker">CERTIFICATIONS & PROFESSIONAL DEVELOPMENT</p>
+          <h2>Continuous Learning That Supports Operational Excellence</h2>
+          <p>
+            This section is ready for your verified certificates. Replace the placeholder details
+            with the exact certificate title, issuing organization, date, credential ID, and credential link.
+          </p>
+        </div>
+
+        <div class="certification-grid">
+          <article class="certificate-card reveal">
+            <div class="certificate-badge certificate-blue">🏅</div>
+            <span class="certificate-status verified">VERIFIED CREDENTIAL</span>
+            <h3>Diploma in Operations Management (Ops)</h3>
+            <dl>
+              <div><dt>Issued by</dt><dd>Alison</dd></div>
+              <div><dt>Issue date</dt><dd>June 2026</dd></div>
+              <div><dt>Credential ID</dt><dd>1707-59248179</dd></div>
+            </dl>
+          </article>
+
+          <article class="certificate-card reveal">
+            <div class="certificate-badge certificate-purple">◆</div>
+            <span class="certificate-status verified">VERIFIED CREDENTIAL</span>
+            <h3>Diploma in Warehouse Management and Logistics</h3>
+            <dl>
+              <div><dt>Issued by</dt><dd>Alison</dd></div>
+              <div><dt>Issue date</dt><dd>Credential on file</dd></div>
+              <div><dt>Credential ID</dt><dd>7479-59248179</dd></div>
+            </dl>
+          </article>
+
+          <article class="certificate-card reveal">
+            <div class="certificate-badge certificate-green">✓</div>
+            <span class="certificate-status verified">VERIFIED CREDENTIAL</span>
+            <h3>ISO 9001:2015 — QMS Essentials</h3>
+            <dl>
+              <div><dt>Issued by</dt><dd>Alison</dd></div>
+              <div><dt>Issue date</dt><dd>Credential on file</dd></div>
+              <div><dt>Credential ID</dt><dd>7483-59248179</dd></div>
+            </dl>
+          </article>
+
+          <article class="certificate-card reveal">
+            <div class="certificate-badge certificate-orange">♻</div>
+            <span class="certificate-status verified">VERIFIED CREDENTIAL</span>
+            <h3>Effective Solid Waste Management</h3>
+            <dl>
+              <div><dt>Issued by</dt><dd>Alison</dd></div>
+              <div><dt>Issue date</dt><dd>June 2026</dd></div>
+              <div><dt>Credential ID</dt><dd>6142-59248179</dd></div>
+            </dl>
+          </article>
+
+          <article class="certificate-card reveal">
+            <div class="certificate-badge certificate-red">🛡</div>
+            <span class="certificate-status verified">COMPLETED</span>
+            <h3>OSHA 10-Hour General Industry</h3>
+            <dl>
+              <div><dt>Provider</dt><dd>360Training</dd></div>
+              <div><dt>Completed</dt><dd>April 5, 2020</dd></div>
+              <div><dt>Credential</dt><dd>Completion on file</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="development-panel reveal">
+          <div>
+            <p class="section-kicker">PROFESSIONAL DEVELOPMENT</p>
+            <h3>Areas of Continuing Growth</h3>
+          </div>
+          <div class="development-chips">
+            <span>Operations Management</span>
+            <span>Warehouse Leadership</span>
+            <span>Continuous Improvement</span>
+            <span>Lean Methodologies</span>
+            <span>Root-Cause Analysis</span>
+            <span>Quality Management</span>
+            <span>Inventory Control</span>
+            <span>Data Analysis</span>
+            <span>Microsoft Excel</span>
+            <span>Leadership Development</span>
+          </div>
+        </div>
+
+        </div>
     </section>
 
     <section class="section skills-section" id="skills">
