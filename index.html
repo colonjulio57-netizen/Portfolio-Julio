@@ -129,7 +129,7 @@ h1 em{font-style:normal;color:#2f85ff}
 .skill-panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:25px;box-shadow:var(--shadow)}
 .chips{display:flex;flex-wrap:wrap;gap:9px}.chips span{padding:9px 11px;border-radius:999px;background:var(--soft);border:1px solid var(--line);font-size:.82rem}
 .contact-section{padding:80px 0;background:linear-gradient(115deg,#061426,#0b63ff);color:white}
-.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}.contact-grid>div>p:last-child{color:#d8e4f5}
+.contact-grid{display:grid;grid-template-columns:1.05fr .85fr .55fr;gap:32px;align-items:center}.contact-grid>div>p:last-child{color:#d8e4f5}
 .contact-list{display:grid;gap:12px}.contact-list a,.contact-list>div{display:flex;gap:14px;align-items:center;padding:14px 16px;border:1px solid #ffffff30;border-radius:12px;background:#ffffff0d}
 .contact-list>a>span,.contact-list>div>span{width:38px;height:38px;border-radius:50%;background:#ffffff18;display:grid;place-items:center}.contact-list p{display:grid;margin:0}.contact-list small{color:#cbd8ea}
 footer{background:#040e1d;color:#cbd6e7;padding:24px 0}.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer p{margin:0;font-size:.82rem}
@@ -329,7 +329,52 @@ footer{background:#040e1d;color:#cbd6e7;padding:24px 0}.footer{display:flex;just
 .nav-links a.active:after{right:0}
 ::selection{background:#0b63ff;color:white}
 
-@media(max-width:980px){.hero-grid,.about-grid,.contact-grid,.development-panel{grid-template-columns:1fr}.certification-grid{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:repeat(2,1fr)}.metrics article{border-right:none;border-bottom:1px solid var(--line);padding:16px}.project-grid,.skills-grid{grid-template-columns:1fr 1fr}.nav-links{display:none;position:absolute;top:70px;left:4%;right:4%;background:#071426;padding:18px;border-radius:14px;flex-direction:column}.nav-links.open{display:flex}.nav-links a{padding:8px}.menu-button{display:block}}
+
+.qr-card{
+  width:100%;
+  max-width:260px;
+  justify-self:end;
+  padding:22px;
+  border-radius:18px;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.22);
+  text-align:center;
+  backdrop-filter:blur(12px);
+  box-shadow:0 18px 45px rgba(0,0,0,.18);
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.qr-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(255,255,255,.38);
+  box-shadow:0 24px 55px rgba(0,0,0,.26);
+}
+.qr-card h3{
+  margin:0 0 13px;
+  color:#fff;
+  font-size:1.1rem;
+}
+.qr-image{
+  display:block;
+  width:min(100%,190px);
+  aspect-ratio:1;
+  margin:0 auto;
+  border-radius:12px;
+  background:#fff;
+  padding:10px;
+}
+.qr-card p{
+  margin:13px 0 4px;
+  color:#fff;
+  font-weight:800;
+  font-size:.88rem;
+}
+.qr-card small{
+  display:block;
+  color:#d6e4f7;
+  line-height:1.45;
+}
+
+@media(max-width:980px){.hero-grid,.about-grid,.contact-grid,.development-panel{grid-template-columns:1fr}.qr-card{justify-self:start;max-width:280px}.certification-grid{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:repeat(2,1fr)}.metrics article{border-right:none;border-bottom:1px solid var(--line);padding:16px}.project-grid,.skills-grid{grid-template-columns:1fr 1fr}.nav-links{display:none;position:absolute;top:70px;left:4%;right:4%;background:#071426;padding:18px;border-radius:14px;flex-direction:column}.nav-links.open{display:flex}.nav-links a{padding:8px}.menu-button{display:block}}
 @media(max-width:640px){h1{font-size:3rem}.signature{font-size:2.35rem}.metrics,.project-grid,.skills-grid,.competency-grid,.certification-grid{grid-template-columns:1fr}.metrics article{border-bottom:1px solid var(--line)}.timeline:before{left:8px}.timeline-row{grid-template-columns:1fr;padding-left:30px;position:relative}.timeline-year{text-align:left;padding:0}.timeline-dot{position:absolute;left:0;top:0;margin:0}.contact-strip>span{display:none}.hero{padding-top:60px}}
 
 </style>
@@ -697,6 +742,14 @@ footer{background:#040e1d;color:#cbd6e7;padding:24px 0}.footer{display:flex;just
           <a href="https://www.linkedin.com/in/colonjul" target="_blank" rel="noopener"><span>in</span><p><small>LinkedIn</small><strong>linkedin.com/in/colonjul</strong></p></a>
           <div><span>⌖</span><p><small>Location</small><strong>Houston, Texas</strong></p></div>
         </div>
+        <aside class="qr-card reveal">
+          <h3>Scan to Save My Contact</h3>
+          <img src="assets/Julio_Colon_Contact_QR.png"
+               alt="QR code to save Julio Colon's contact information"
+               class="qr-image">
+          <p>Connect instantly</p>
+          
+        </aside>
       </div>
     </section>
   </main>
